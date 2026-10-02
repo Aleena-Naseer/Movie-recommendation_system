@@ -36,10 +36,7 @@ TMDB 5000 Movies and Credits dataset.
 ## 📸 Screenshots
 
 ### Recommendation Output
-![Recommendation Output](screenshots/recommendation.png)
-
-### Movie Data
-![Movie Data](screenshots/movies.png)
+![Recommendation Output](screenshots/recommendation11.png)
 
 ## Dataset
 
