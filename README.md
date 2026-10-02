@@ -1,3 +1,4 @@
+
 # Movie Recommendation System
 
 A content-based movie recommendation system built with Python. It recommends movies based on their genres, keywords, overview, cast, and director.
@@ -39,3 +40,14 @@ TMDB 5000 Movies and Credits dataset.
 
 ### Movie Data
 ![Movie Data](screenshots/movies.png)
+
+## Dataset
+
+This project uses the **TMDB 5000 Movies Dataset**.
+
+[Download TMDB 5000 Dataset](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata)
+
+After downloading, place these files in the project folder:
+
+- `tmdb_5000_movies.csv`
+- `tmdb_5000_credits.csv`
