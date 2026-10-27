@@ -135,7 +135,6 @@ div[data-testid="stDecoration"] {{
     display: none;
 }}
 
-/* Navigation-style brand */
 .brand {{
     display: flex;
     align-items: center;
@@ -163,7 +162,6 @@ div[data-testid="stDecoration"] {{
     text-transform: uppercase;
 }}
 
-/* Hero */
 .hero {{
     text-align: center;
     padding: 2.8rem 0 2.6rem;
@@ -200,7 +198,6 @@ div[data-testid="stDecoration"] {{
     line-height: 1.9;
 }}
 
-/* Search panel */
 .search-panel {{
     max-width: 800px;
     margin: 0 auto 3.5rem;
@@ -224,7 +221,6 @@ div[data-testid="stDecoration"] {{
     margin-bottom: 1.3rem;
 }}
 
-/* Dropdown */
 div[data-baseweb="select"] > div {{
     background: #17191b;
     border: 1px solid #45433a;
@@ -240,7 +236,6 @@ div[data-baseweb="select"] * {{
     color: #f7f5ef;
 }}
 
-/* Recommend button */
 .stButton > button {{
     width: 100%;
     min-height: 49px;
@@ -261,7 +256,6 @@ div[data-baseweb="select"] * {{
     transform: translateY(-1px);
 }}
 
-/* Recommendations section */
 .section-title {{
     font-family: 'Playfair Display', Georgia, serif;
     color: #f8f5ed;
@@ -283,7 +277,6 @@ div[data-baseweb="select"] * {{
     margin: 0.9rem 0 1.1rem;
 }}
 
-/* Movie cards */
 .movie-card {{
     min-height: 205px;
     height: 100%;
@@ -339,7 +332,6 @@ div[data-baseweb="select"] * {{
     line-height: 1.5;
 }}
 
-/* Empty state */
 .empty-state {{
     text-align: center;
     padding: 1.4rem;
@@ -349,7 +341,6 @@ div[data-baseweb="select"] * {{
     border-radius: 12px;
 }}
 
-/* Footer */
 .app-footer {{
     margin-top: 4rem;
     padding: 1.5rem 0 0.7rem;
@@ -366,7 +357,6 @@ div[data-baseweb="select"] * {{
     font-weight: 700;
 }}
 
-/* Responsive */
 @media (max-width: 768px) {{
     .block-container {{
         padding: 1rem 1rem 2rem;
@@ -416,16 +406,12 @@ div[data-baseweb="select"] * {{
 </style>
 """, unsafe_allow_html=True)
 
-
-# ---------------- BRAND ----------------
 st.markdown("""
 <div class="brand">
     <div class="brand-name">CINE<span>MATCH</span></div>
 </div>
 """, unsafe_allow_html=True)
 
-
-# ---------------- HERO ----------------
 st.markdown("""
 <div class="hero">
     <div class="eyebrow">✦ Curated for your next movie night ✦</div>
@@ -438,8 +424,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-
-# ---------------- MOVIE SELECTOR ----------------
 st.markdown("""
 """, unsafe_allow_html=True)
 
@@ -454,8 +438,6 @@ if st.button("✦   Discover Recommendations", use_container_width=True):
     st.session_state["recommendations"] = recommend(selected_movie_name)
     st.session_state["selected_title"] = selected_movie_name
 
-
-# ---------------- RECOMMENDATIONS ----------------
 if "recommendations" in st.session_state:
     recommendations = st.session_state["recommendations"]
     selected_title = st.session_state["selected_title"]
@@ -491,8 +473,6 @@ if "recommendations" in st.session_state:
             unsafe_allow_html=True
         )
 
-
-# ---------------- FOOTER ----------------
 st.markdown("""
 <div class="app-footer">
     <span>CINEMATCH</span><br>
