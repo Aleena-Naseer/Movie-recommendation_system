@@ -20,14 +20,14 @@ def load_data():
     with open(BASE_DIR / "movie_dict.pkl", "rb") as file:
         movie_dict = pickle.load(file)
 
-    with open(BASE_DIR / "similarity.pkl", "rb") as file:
-        similarity_matrix = pickle.load(file)
+   with open(BASE_DIR / "top_similar.pkl", "rb") as file:
+    top_similar = pickle.load(file)
 
     movie_df = pd.DataFrame(movie_dict)
-    return movie_df, similarity_matrix
+    return movie_df, top_similar
 
 
-movies, similarity = load_data()
+movies, top_similar = load_data()
 
 
 def get_background():
@@ -48,6 +48,7 @@ def get_background():
 background_image = get_background()
 
 
+
 def recommend(movie):
     matches = movies.index[movies["title"] == movie]
 
@@ -55,30 +56,17 @@ def recommend(movie):
         return []
 
     movie_index = matches[0]
-    distances = similarity[movie_index]
-
-    ranked_movies = sorted(
-        enumerate(distances),
-        key=lambda item: item[1],
-        reverse=True
-    )
+    recommended_indices = top_similar[movie_index][:5]
 
     results = []
 
-    for index, score in ranked_movies:
-        if index == movie_index:
-            continue
-
+    for index in recommended_indices:
         title = movies.iloc[index]["title"]
 
         if title not in results:
             results.append(title)
 
-        if len(results) == 5:
-            break
-
     return results
-
 
 # ---------------- CSS ----------------
 background_css = (
